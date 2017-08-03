@@ -72,12 +72,19 @@ console.log(woodItems);
 //    Display the name, number of items and the items it is made of.
 function question5 () {
   // Answer:
+let eightItems = [];
   for (let i = 0; i < data.length; i++) {
 
+    if (data[i].materials.length >= 8) {
+     eightItems.push(data[i].title, data[i].materials.length, data[i].materials);
   }
 
-}
 
+
+}
+  console.log(eightItems);
+  return eightItems;
+}
 
 
 // 6: How many items were made by their sellers?
@@ -85,13 +92,14 @@ function question5 () {
 function question6 () {
   // Answer:
   let bySellers = [];
-  // for (var i = 0; i < data.length; i++) {
-  //   if (data[i][tags].who_made === "someone_else")
-  //   {
-  //     let madeBy = data[i][tags].who_made;
-  //     bySellers.push(madeBy);
-  //   }
-  // }
-  //   console.log(madeBy);
-  // // return madeBy.length;
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].who_made === "i_did") {
+      bySellers.push(data[i]);
+    }
+  }
+  console.log(bySellers);
+  console.log(bySellers.length);
+  let num = bySellers.length;
+
+
 }
